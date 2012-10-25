@@ -16,7 +16,7 @@ public final class NicheSpeciator<T> implements ISpeciator<T>
 		this.minSimilarity = minSimilarity;
 		this.curve = curve;
 		
-		this.similarityRange = 1f-minSimilarity;
+		this.similarityRange = 1f - minSimilarity;
 	}
 	
 	public final float getSimilarity(T a, T b)
@@ -26,6 +26,6 @@ public final class NicheSpeciator<T> implements ISpeciator<T>
 		if (similarity < minSimilarity)
 			return 0f;
 		
-		return (float)Math.pow(similarity/similarityRange, curve);
+		return (float)Math.pow(similarity / similarityRange, curve);
 	}
 }
