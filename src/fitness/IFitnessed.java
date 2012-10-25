@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 public interface IFitnessed
 {
-	/** Ideally, this should be a field getter-- otherwise, this needs to be fast,
-	 *  given how frequently this will likely be called by users of the interface. */
+	/** Ideally, this should be as fast as possible-- this should behave as a field getter,
+         * given the frequency at which this method will be called by owners of this interface. */
 	public float getFitness();
 
 	public static final Comparator<IFitnessed> fitnessComparator = new Comparator<IFitnessed>()
