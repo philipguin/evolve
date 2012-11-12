@@ -4,21 +4,16 @@ import java.util.Comparator;
 
 public interface IFitnessed
 {
-	/** 
-	 *  Ideally, this should be a field getter-- otherwise, this needs to be fast,
-	 *  given how frequently this will be called by users of the interface.<P>
-	 *  
-	 *  The number returned must be greater than (and not equal to) 0.
-	 *  Otherwise, weird behavior and/or errors will result.
-	 */
+	/** Ideally, this should be as fast as possible-- this should behave as a field getter,
+         * given the frequency at which this method will be called by owners of this interface. */
 	public float getFitness();
 
 	public static final Comparator<IFitnessed> fitnessComparator = new Comparator<IFitnessed>()
 	{
 		@Override
-		public int compare(IFitnessed a, IFitnessed b)
+		public int compare(IFitnessed o1, IFitnessed o2)
 		{
-			return Float.compare(a.getFitness(), b.getFitness());
+			return Float.compare(o1.getFitness(), o2.getFitness());
 		}
 	};
 }

@@ -19,7 +19,7 @@ public class WeightedAverageSpeciator<T> implements ISpeciator<T>
 		for (float weight : weights)
 			totalWeight += weight;
 		
-		this.oneOverTotalWeight = 1f/totalWeight;
+		this.oneOverTotalWeight = 1f / totalWeight;
 	}
 	
 	public float getSimilarity(T a, T b)
