@@ -66,4 +66,10 @@ public final class CelebrityBiasedSpeciatedWeightMaker<T> implements IWeightMake
 	{
 		return tempWeights.get(currentWeight++);
 	}
+	
+	@Override
+	public final void reset()
+	{
+		currentWeight = 0;
+	}
 }

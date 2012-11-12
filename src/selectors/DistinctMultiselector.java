@@ -23,6 +23,8 @@ public class DistinctMultiselector<T> implements IMultiselector<T>
 	@Override
 	public final List<T> select(List<? extends T> choices, int numberToSelect)
 	{
+		assert numberToSelect <= choices.size();
+		
 		List<T> result = new ArrayList<T>(numberToSelect);
 		
 		T selection;

@@ -19,7 +19,7 @@ public final class ExponentialWeightMaker<T> implements IWeightMaker<T>
 		tempTotalWeight = 1f;
 		
 		for (int i = 0; i < associated.size(); ++i)
-			tempTotalWeight += tempTotalWeight*toRaise;
+			tempTotalWeight += tempTotalWeight * toRaise;
 		
 		previousWeight = 1f;
 	}
@@ -34,5 +34,11 @@ public final class ExponentialWeightMaker<T> implements IWeightMaker<T>
 	public final float getNextWeight()
 	{
 		return previousWeight * toRaise;
+	}
+	
+	@Override
+	public final void reset()
+	{
+		previousWeight = 1f;
 	}
 }

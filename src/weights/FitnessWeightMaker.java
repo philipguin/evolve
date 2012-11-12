@@ -37,4 +37,10 @@ public final class FitnessWeightMaker<T extends IFitnessed> implements IWeightMa
 	{
 		return associated.get(currentWeight++).getFitness();
 	}
+	
+	@Override
+	public final void reset()
+	{
+		currentWeight = 0;
+	}
 }

@@ -59,4 +59,10 @@ public final class AbsoluteSpeciatedWeightMaker<T> implements IWeightMaker<T>
 	{
 		return tempWeights.get(currentWeight++);
 	}
+	
+	@Override
+	public final void reset()
+	{
+		currentWeight = 0;
+	}
 }
